@@ -1,0 +1,18 @@
+.competences-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.competence-item {
+  flex: 1 1 45%;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .competence-item {
+    flex: 1 1 45%;
+  }
+}

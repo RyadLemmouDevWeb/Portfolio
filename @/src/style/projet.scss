@@ -1,0 +1,44 @@
+$primary-color: #d4a373;
+$hover_color: #b8865b;
+img {
+  height: 70vh;
+  width: 70vw;
+  padding: 10px;
+}
+
+.travail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 20px;
+}
+
+a:hover {
+  transition: 2s;
+}
+
+#git {
+  color: $primary-color;
+  &:hover {
+    background: $hover_color;
+    border-radius: 10%;
+  }
+}
+@media (max-width: 768px) {
+  img {
+    height: auto;
+    width: 90vw;
+    padding: 5px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .travail {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,131 @@
+$primary-color: #d4a373;
+$dark-color: #343a40;
+$light-color: #f8f9fa;
+$toggle-size: 40px;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+body {
+  background-color: $dark-color;
+  color: $light-color;
+  font-family: Quicksand, sans-serif;
+}
+
+#head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.navbar {
+  background-color: $primary-color;
+  padding: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $light-color;
+  cursor: pointer;
+  font-size: large;
+}
+
+h1 {
+  color: $light-color;
+  font-size: 1200%;
+}
+
+h2 {
+  color: $light-color;
+  font-size: xx-large;
+  text-decoration: underline;
+}
+
+#logo {
+  height: 50px;
+  width: 50px;
+}
+
+.toggle-container {
+  position: sticky;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: $toggle-size * 2;
+  height: $toggle-size;
+  background: $light-color;
+  border-radius: $toggle-size;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+
+  .toggle-circle {
+    width: $toggle-size - 6;
+    height: $toggle-size - 6;
+    background: $primary-color;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+}
+
+body.dark-mode {
+  background: $light-color;
+  color: $dark-color;
+
+  .toggle-container {
+    background: $light-color;
+
+    .toggle-circle {
+      transform: translateX($toggle-size);
+      background: $dark-color;
+    }
+  }
+  h1,
+  h2 {
+    color: $dark-color;
+  }
+
+  #identité {
+    border: 2px solid $dark-color;
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  a {
+    font-size: medium;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 600%;
+  }
+
+  h2 {
+    font-size: x-large;
+  }
+
+  #logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .toggle-container {
+    width: $toggle-size * 1.5;
+    height: $toggle-size * 0.75;
+
+    .toggle-circle {
+      width: $toggle-size - 8;
+      height: $toggle-size - 8;
+    }
+  }
+}
