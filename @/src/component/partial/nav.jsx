@@ -32,7 +32,7 @@ export default function Nav() {
         <nav className="navbar">
           <img
             id="logo"
-            src="src/assets/Logo_R_2-removebg-preview.png"
+            src="./assets/Logo_R_2-removebg-preview.png"
             alt="logo du site"
           />
           <a href="#Accueil" className="nav-link">
