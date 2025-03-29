@@ -6,7 +6,7 @@ export default function Accroche() {
           <div id="identité">
             <img
               id="photo"
-              src="/src/assets/2025-01-22 - LEMMOU -Ryad - 2025-01-22T15_45_33.482Z - Photo_Cool_1.jpg"
+              src="/public/assets/2025-01-22 - LEMMOU -Ryad - 2025-01-22T15_45_33.482Z - Photo_Cool_1.jpg"
               alt="photo de moi"
             />
           </div>
