@@ -27,8 +27,7 @@ Portfolio moderne développé avec Vite + React, mettant en valeur mes compéten
 
 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/votre-utilisateur/portfolio-.git
-cd portfolio
+git@github.com:RyadLemmouDevWeb/Portfolio.git
 ```
 2. Lancer le projet :
 ```bash
