@@ -8,6 +8,7 @@ import { RiTailwindCssFill } from 'react-icons/ri';
 import { FaReact } from 'react-icons/fa';
 import { FaTrello } from 'react-icons/fa';
 import { FaFigma } from 'react-icons/fa';
+import { DiGithubBadge } from 'react-icons/di';
 
 export default function Competences() {
   const skills = [
@@ -21,6 +22,7 @@ export default function Competences() {
     [<FaReact size={40} />, 'REACT'],
     [<FaTrello size={40} />, 'TRELLO'],
     [<FaFigma size={40} />, 'FIGMA'],
+    [<DiGithubBadge size={40} />, 'GITHUB'],
   ];
 
   return (
