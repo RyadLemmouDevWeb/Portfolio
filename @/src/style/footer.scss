@@ -1,0 +1,48 @@
+$primary-color: #d4a373;
+$dark-color: #343a40;
+$light-color: #f8f9fa;
+
+footer {
+  background: $primary-color;
+  color: $light-color;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.social-icons a {
+  color: $light-color;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: $dark-color;
+}
+
+#scrollToTop {
+  background: $primary-color;
+  border: none;
+  color: $light-color;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  transition: background 0.3s;
+}
+
+#scrollToTop:hover {
+  background: lighten($primary-color, 10%);
+}

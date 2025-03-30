@@ -6,6 +6,7 @@ import Projet from './component/partial/projet.jsx';
 import Presentation from './component/partial/presentation.jsx';
 import './style/input.scss';
 import Competences from './component/partial/competence.jsx';
+import Footer from './component/partial/footer.jsx';
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
       <Competences />
 
       <Form />
+      <Footer />
     </>
   );
 }
