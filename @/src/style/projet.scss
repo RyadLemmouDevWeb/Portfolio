@@ -1,5 +1,6 @@
-$primary-color: #d4a373;
-$hover_color: #b8865b;
+@use './carousel.scss';
+@use './variables' as *;
+
 img {
   height: 70vh;
   width: 70vw;

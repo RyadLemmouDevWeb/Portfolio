@@ -1,7 +1,6 @@
-@import '../style/navbar.scss';
-@import '../style/form.scss';
-@import '../style/presentation.scss';
-@import '../style/projet.scss';
-@import '../style/competence.scss';
-@import '../style/competence.scss';
-@import '../style/footer.scss';
+@use './navbar.scss';
+@use './form.scss';
+@use './presentation.scss';
+@use './projet.scss';
+@use './competence.scss';
+@use './footer.scss';

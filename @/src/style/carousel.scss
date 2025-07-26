@@ -1,0 +1,211 @@
+@use './variables' as *;
+
+@mixin carousel-button($size: 50px) {
+  @include button-base;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: $button-bg;
+  color: white;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  @include flex-center;
+  z-index: 2;
+
+  &:hover {
+    background: $button-hover;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+
+  .carousel-wrapper {
+    position: relative;
+    @include flex-center;
+    background: $light-bg;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px $shadow-light;
+
+    .carousel-image-container {
+      flex: 1;
+      @include flex-center;
+      min-height: 450px;
+      background: #fff;
+
+      .carousel-image {
+        max-width: 100%;
+        max-height: 600px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+
+    .carousel-button {
+      @include carousel-button;
+
+      &.prev {
+        left: 15px;
+      }
+
+      &.next {
+        right: 15px;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    @include flex-center;
+    gap: 8px;
+    margin-top: 15px;
+
+    .indicator {
+      @include button-base;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+
+      &:hover {
+        background: $primary-color;
+        transform: scale(1.2);
+      }
+
+      &.active {
+        background: $primary-color;
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  .carousel-counter {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: $light-text;
+    font-weight: 500;
+  }
+
+  .carousel-placeholder {
+    text-align: center;
+    padding: 40px;
+    background: $light-bg;
+    border-radius: 12px;
+    color: $light-text;
+    font-style: italic;
+  }
+}
+
+body.dark-mode {
+  .carousel-container {
+    .carousel-wrapper {
+      background: $dark-bg;
+      box-shadow: 0 4px 15px $shadow-dark;
+
+      .carousel-image-container {
+        background: $dark-secondary;
+      }
+    }
+
+    .carousel-counter {
+      color: $dark-text;
+    }
+
+    .carousel-placeholder {
+      background: $dark-bg;
+      color: $dark-text;
+    }
+
+    .carousel-indicators {
+      .indicator {
+        background: #4a5568;
+
+        &:hover {
+          background: $primary-color;
+        }
+
+        &.active {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%;
+    margin: 15px 0;
+
+    .carousel-wrapper {
+      .carousel-image-container {
+        min-height: 300px;
+
+        .carousel-image {
+          max-height: 400px;
+        }
+      }
+
+      .carousel-button {
+        @include carousel-button(40px);
+
+        &.prev {
+          left: 10px;
+        }
+
+        &.next {
+          right: 10px;
+        }
+      }
+    }
+
+    .carousel-indicators {
+      .indicator {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    .carousel-wrapper {
+      .carousel-image-container {
+        min-height: 250px;
+
+        .carousel-image {
+          max-height: 300px;
+        }
+      }
+
+      .carousel-button {
+        @include carousel-button(35px);
+
+        &.prev {
+          left: 5px;
+        }
+
+        &.next {
+          right: 5px;
+        }
+      }
+    }
+  }
+}

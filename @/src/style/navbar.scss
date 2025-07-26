@@ -1,8 +1,7 @@
-$primary-color: #d4a373;
-$dark-color: #343a40;
-$light-color: #f8f9fa;
-$toggle-size: 40px;
+@use './dynamic-header.scss';
+@use './variables' as *;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 body {
   background-color: $dark-color;
   color: $light-color;

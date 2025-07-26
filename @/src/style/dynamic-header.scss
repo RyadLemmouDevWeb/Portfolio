@@ -1,0 +1,123 @@
+@use './variables' as *;
+
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  transform: translateY(0); 
+
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  #head {
+    .navbar {
+      padding: 1rem 2rem;
+      transition: padding 0.3s ease;
+
+      &.compact {
+        padding: 0.5rem 2rem;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: -5px;
+          left: 50%;
+          background: #d4a373;
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &.active {
+          color: #d4a373;
+          
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      #logo {
+        transition: all 0.3s ease;
+        
+        &.compact {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  header {
+    &.scrolled {
+      background: rgba(45, 55, 72, 0.95);
+      border-bottom: 1px solid rgba(212, 163, 115, 0.3);
+    }
+
+    .navbar {
+      .nav-link {
+        color: #e2e8f0;
+
+        &:hover {
+          color: #d4a373;
+        }
+
+        &.active {
+          color: #d4a373;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    #head {
+      .navbar {
+        padding: 0.8rem 1rem;
+        
+        &.compact {
+          padding: 0.4rem 1rem;
+        }
+
+        #logo {
+          &.compact {
+            transform: scale(0.7);
+          }
+        }
+
+        .nav-link {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+body {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+}

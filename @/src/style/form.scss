@@ -1,7 +1,6 @@
-$dark-color: #343a40;
-$light-color: #f8f9fa;
-$primary-color: #d4a373;
-$hover_color: #b8865b;
+@use './variables' as *;
+@use './modern-form.scss';
+
 .contact-form {
   background-color: $dark-color;
   color: $light-color;
@@ -29,7 +28,7 @@ $hover_color: #b8865b;
     margin-top: 0.5rem;
     border: none;
     border-radius: 5px;
-    background-color: lighten($dark-color, 10%);
+    background-color: lighten-color($dark-color, 10%);
     color: $light-color;
     font-size: 1rem;
     outline: none;

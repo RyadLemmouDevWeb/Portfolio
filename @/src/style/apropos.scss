@@ -1,0 +1,113 @@
+$primary-color: #d4a373;
+$hover-color: #b8865b;
+
+#À\ Propos {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: $primary-color;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+
+  .competences-container {
+    margin: 3rem 0;
+    
+    h3 {
+      text-align: center;
+    }
+
+    .competences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+
+      .competence-item {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 500;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .philosophy {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba($primary-color, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid $primary-color;
+  }
+}
+
+body.dark-mode {
+  #À\ Propos {
+    .competences-container {
+      .competences-grid {
+        .competence-item {
+          background: #2d3748;
+          color: #e2e8f0;
+        }
+      }
+    }
+
+    .philosophy {
+      background: rgba($primary-color, 0.2);
+      color: #e2e8f0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #À\ Propos {
+    padding: 60px 15px;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .competences-container {
+      .competences-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+      }
+    }
+
+    .philosophy {
+      padding: 1.5rem;
+    }
+  }
+}

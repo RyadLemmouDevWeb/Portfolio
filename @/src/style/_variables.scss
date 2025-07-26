@@ -1,0 +1,41 @@
+@use 'sass:color';
+
+$primary-color: #d4a373;
+$hover-color: #b8865b;
+$dark-color: #343a40;
+$light-color: #f8f9fa;
+
+$dark-bg: #2d3748;
+$dark-secondary: #1a202c;
+$dark-text: #e2e8f0;
+
+$light-bg: #f8f9fa;
+$light-text: #666;
+
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-dark: rgba(0, 0, 0, 0.3);
+
+$button-bg: rgba(0, 0, 0, 0.7);
+$button-hover: rgba(0, 0, 0, 0.9);
+
+$toggle-size: 40px;
+
+@function lighten-color($color, $amount) {
+  @return color.adjust($color, $lightness: $amount);
+}
+
+@function darken-color($color, $amount) {
+  @return color.adjust($color, $lightness: -$amount);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-base {
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

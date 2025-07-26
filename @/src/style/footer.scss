@@ -1,6 +1,4 @@
-$primary-color: #d4a373;
-$dark-color: #343a40;
-$light-color: #f8f9fa;
+@use './variables' as *;
 
 footer {
   background: $primary-color;
@@ -44,7 +42,7 @@ footer {
 }
 
 #scrollToTop:hover {
-  background: lighten($primary-color, 10%);
+  background: lighten-color($primary-color, 10%);
 }
 
 @media (max-width: 768px) {
