@@ -1,130 +1,136 @@
-@use './dynamic-header.scss';
 @use './variables' as *;
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-body {
-  background-color: $dark-color;
-  color: $light-color;
-  font-family: Quicksand, sans-serif;
-}
+.island-navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 1000;
+  
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: $shadow-light;
+  
+  width: fit-content;
+  min-width: 350px;
+  transition: all 0.3s ease;
 
-#head {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.navbar {
-  background-color: $primary-color;
-  padding: 1rem;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-}
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 
-a {
-  text-decoration: none;
-  color: $light-color;
-  cursor: pointer;
-  font-size: large;
-}
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
 
-h1 {
-  color: $light-color;
-  font-size: 1200%;
-}
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 
-h2 {
-  color: $light-color;
-  font-size: xx-large;
-  text-decoration: underline;
-}
+    .nav-link {
+      text-decoration: none;
+      color: $light-text;
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+      transition: color 0.3s ease;
 
-#logo {
-  height: 50px;
-  width: 50px;
-}
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
 
-.toggle-container {
-  position: sticky;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  width: $toggle-size * 2;
-  height: $toggle-size;
-  background: $light-color;
-  border-radius: $toggle-size;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
+  .toggle-container {
+    width: 44px;
+    height: 24px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
 
-  .toggle-circle {
-    width: $toggle-size - 6;
-    height: $toggle-size - 6;
-    background: $primary-color;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+    .toggle-circle {
+      width: 20px;
+      height: 20px;
+      background: $primary-color;
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
   }
 }
 
 body.dark-mode {
-  background: $light-color;
-  color: $dark-color;
+  .island-navbar {
+    background: rgba(26, 32, 44, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: $shadow-dark;
 
-  .toggle-container {
-    background: $light-color;
+    .nav-links .nav-link {
+      color: $dark-text;
+      &:hover {
+        color: $primary-color;
+      }
+    }
 
-    .toggle-circle {
-      transform: translateX($toggle-size);
-      background: $dark-color;
+    .toggle-container {
+      background: #4a5568;
+      .toggle-circle {
+        transform: translateX(20px);
+        background: $dark-text;
+      }
     }
   }
-  h1,
-  h2 {
-    color: $dark-color;
-  }
-
-  #identité {
-    border: 2px solid $dark-color;
-    object-fit: cover;
-  }
 }
+
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
+  .island-navbar {
+    top: 1rem;
     width: 90%;
-  }
+    padding: 0.5rem 1rem;
 
-  a {
-    font-size: medium;
-    margin-bottom: 10px;
-  }
+    min-width: unset;
 
-  h1 {
-    font-size: 600%;
-  }
+    .nav-links {
+      display: flex;
+      gap: 0.9rem;
+      max-width: 58vw;
+      overflow-x: auto;
+      scrollbar-width: none;
 
-  h2 {
-    font-size: x-large;
-  }
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
-  #logo {
-    height: 40px;
-    width: 40px;
-  }
+      .nav-link {
+        white-space: nowrap;
+        font-size: 0.84rem;
+      }
+    }
+    
+    .nav-content {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
 
-  .toggle-container {
-    width: $toggle-size * 1.5;
-    height: $toggle-size * 0.75;
-
-    .toggle-circle {
-      width: $toggle-size - 8;
-      height: $toggle-size - 8;
+    .nav-logo img {
+      height: 34px;
     }
   }
 }

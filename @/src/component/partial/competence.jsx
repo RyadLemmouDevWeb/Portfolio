@@ -1,47 +1,81 @@
-import { FaHtml5 } from 'react-icons/fa';
-import { FaSass } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaHtml5, FaNodeJs, FaDocker, FaReact, FaGitAlt } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
-import { SiPhp } from 'react-icons/si';
+import { SiPhp, SiNextdotjs, SiTailwindcss, SiPostgresql, SiMongodb, SiPuppeteer } from 'react-icons/si';
 import { DiDatabase } from 'react-icons/di';
-import { FaDocker } from 'react-icons/fa';
-import { RiTailwindCssFill } from 'react-icons/ri';
-import { FaReact } from 'react-icons/fa';
-import { FaTrello } from 'react-icons/fa';
-import { FaFigma } from 'react-icons/fa';
-import { DiGithubBadge } from 'react-icons/di';
+import Magnetic from '../animations/Magnetic';
 
 export default function Competences() {
   const skills = [
-    [<FaHtml5 size={40} />, 'HTML'],
-    [<FaSass size={40} />, 'SASS'],
-    [<IoLogoJavascript size={40} />, 'JS'],
-    [<SiPhp size={40} />, 'PHP'],
-    [<DiDatabase size={40} />, 'SQL'],
-    [<FaDocker size={40} />, 'DOCKER'],
-    [<RiTailwindCssFill size={40} />, 'TAILWIND'],
-    [<FaReact size={40} />, 'REACT'],
-    [<FaTrello size={40} />, 'TRELLO'],
-    [<FaFigma size={40} />, 'FIGMA'],
-    [<DiGithubBadge size={40} />, 'GITHUB'],
+    { icon: <FaReact size={40} />, name: 'React.js' },
+    { icon: <SiNextdotjs size={40} />, name: 'Next.js' },
+    { icon: <IoLogoJavascript size={40} />, name: 'JavaScript' },
+    { icon: <SiTailwindcss size={40} />, name: 'Tailwind' },
+    { icon: <SiPhp size={40} />, name: 'PHP (Symfony/Laravel)' },
+    { icon: <FaNodeJs size={40} />, name: 'Node.js' },
+    { icon: <DiDatabase size={40} />, name: 'MySQL' },
+    { icon: <SiPostgresql size={40} />, name: 'PostgreSQL' },
+    { icon: <SiMongodb size={40} />, name: 'MongoDB' },
+    { icon: <FaGitAlt size={40} />, name: 'Git / GitHub' },
+    { icon: <SiPuppeteer size={40} />, name: 'Puppeteer' },
+    { icon: <FaDocker size={40} />, name: 'Docker / CI-CD' },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 } 
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div className="competences-container">
-      {/* <h2>Compétences</h2> */}
-      {skills.map((array, index) => (
-        <Description key={index} props={array} />
+    <motion.div 
+      className="competences-container"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        justifyContent: 'center', 
+        gap: '2rem',
+        maxWidth: '1000px',
+        margin: '0 auto 4rem auto'
+      }}
+    >
+      {skills.map((skill, index) => (
+        <motion.div key={index} variants={itemVariants}>
+          <Magnetic>
+            <div 
+              className="skill-card"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: '1.5rem',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '15px',
+                width: '100px',
+                cursor: 'pointer',
+                backdropFilter: 'blur(5px)'
+              }}
+            >
+              <div style={{ color: '#d4a373', marginBottom: '0.5rem' }}>
+                {skill.icon}
+              </div>
+              <p style={{ margin: 0, fontWeight: '500' }}>{skill.name}</p>
+            </div>
+          </Magnetic>
+        </motion.div>
       ))}
-    </div>
-  );
-}
-
-function Description({ props }) {
-  console.log(props);
-
-  return (
-    <div className="skills">
-      <p>{props[0]}</p>
-      <p>{props[1]}</p>
-    </div>
+    </motion.div>
   );
 }

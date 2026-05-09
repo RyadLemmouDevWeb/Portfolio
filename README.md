@@ -17,7 +17,7 @@
 - ✨ **Animations fluides** avec Framer Motion
 - 🎭 **Effets glassmorphism** et design moderne
 
-### �️ **Galerie de Projets**
+### 🖼️ **Galerie de Projets**
 - 📸 **Carousel interactif** pour chaque projet
 - 🎯 **Navigation par indicateurs** avec couleur personnalisée
 - 🔄 **Animations de transition** au changement d'image
@@ -118,7 +118,7 @@ Portfolio/
 ## 📞 Contact
 
 **Ryad Lemmou** - Développeur Front-End  
-📧 [Email via le formulaire du site](https://votre-portfolio.com/#Contact)  
+📧 [Email via le formulaire du site](#contact) 
 💼 [LinkedIn](https://linkedin.com/in/ryad-lemmou)  
 🐱 [GitHub](https://github.com/RyadLemmouDevWeb)
 
@@ -141,4 +141,4 @@ Portfolio/
 
 ---
 
-*Portfolio développé avec ❤️ par Ryad Lemmou - 2025*
+*Portfolio développé avec ❤️ par Ryad Lemmou - 2026*

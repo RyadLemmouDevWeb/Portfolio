@@ -1,6 +1,35 @@
+@use './variables' as *;
 @use './navbar.scss';
-@use './form.scss';
 @use './presentation.scss';
 @use './projet.scss';
 @use './competence.scss';
+@use './form.scss';
 @use './footer.scss';
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $light-bg;
+  color: $light-text;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+
+body.dark-mode {
+  background-color: $dark-bg;
+  color: $dark-text;
+}

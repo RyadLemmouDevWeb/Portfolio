@@ -62,9 +62,7 @@
   }
 }
 
-#contact {
-  text-decoration: underline;
-}
+/* Removed global underline on #contact to avoid affecting button text */
 
 @media (max-width: 768px) {
   .contact-form {

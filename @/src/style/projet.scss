@@ -1,45 +1,73 @@
-@use './carousel.scss';
 @use './variables' as *;
+@use './carousel.scss';
 
-img {
-  height: 70vh;
-  width: 70vw;
-  padding: 10px;
-}
-
-.travail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-p {
-  font-size: 20px;
-}
-
-a:hover {
-  transition: 2s;
-}
-
-#git {
-  color: $primary-color;
-  &:hover {
-    background: $hover_color;
-    border-radius: 10%;
+#projets {
+  > div > div > h2 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 3rem;
+    margin-bottom: 4rem;
   }
 }
-@media (max-width: 768px) {
-  img {
-    height: auto;
-    width: 90vw;
-    padding: 5px;
+
+.project-card {
+  margin-bottom: 6rem;
+
+  ul {
+    color: $light-text;
+  }
+  
+  h3 {
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   p {
-    font-size: 16px;
+    font-size: 1.1rem;
+    color: $light-text;
+    line-height: 1.6;
+    margin-bottom: 2rem;
   }
 
-  .travail {
-    padding: 10px;
+  a {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid $primary-color;
+    border-radius: 30px;
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+body.dark-mode {
+  .project-card {
+    p {
+      color: $dark-secondary-text;
+    }
+
+    ul {
+      color: $dark-secondary-text;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .project-card {
+    display: flex !important; 
+    flex-direction: column !important;
+    gap: 2rem !important;
+
+    div {
+      order: unset !important;
+    }
   }
 }

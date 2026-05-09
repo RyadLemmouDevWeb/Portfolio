@@ -2,30 +2,29 @@
 
 $primary-color: #d4a373;
 $hover-color: #b8865b;
-$dark-color: #343a40;
-$light-color: #f8f9fa;
-
-$dark-bg: #2d3748;
-$dark-secondary: #1a202c;
-$dark-text: #e2e8f0;
+$secondary-accent: #e9c46a;
 
 $light-bg: #f8f9fa;
-$light-text: #666;
+$light-text: #2d3748;
+$light-secondary-text: #718096;
+$light-card-bg: rgba(255, 255, 255, 0.8);
 
-$shadow-light: rgba(0, 0, 0, 0.1);
-$shadow-dark: rgba(0, 0, 0, 0.3);
+$dark-bg: #1a202c;
+$dark-text: #f7fafc;
+$dark-secondary: #2d3748;
+$dark-secondary-text: #a0aec0;
+$dark-card-bg: rgba(45, 55, 72, 0.6);
 
-$button-bg: rgba(0, 0, 0, 0.7);
-$button-hover: rgba(0, 0, 0, 0.9);
+$shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+$shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.4);
 
-$toggle-size: 40px;
+$dark-color: #1a202c;
+$light-color: #f7fafc;
+$button-bg: rgba(212, 163, 115, 0.9);
+$button-hover: rgba(184, 134, 91, 1);
 
 @function lighten-color($color, $amount) {
   @return color.adjust($color, $lightness: $amount);
-}
-
-@function darken-color($color, $amount) {
-  @return color.adjust($color, $lightness: -$amount);
 }
 
 @mixin flex-center {
@@ -38,4 +37,11 @@ $toggle-size: 40px;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: inherit;
+  outline: none;
+  
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
 }

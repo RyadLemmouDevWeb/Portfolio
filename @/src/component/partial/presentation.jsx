@@ -1,26 +1,37 @@
+import MaskedText from '../animations/MaskedText';
+
 export default function Presentation() {
   return (
-    <div id="À Propos">
-      <h2>
-        "Créer, apprendre, et relever des défis : voilà ce qui me motive au
-        quotidien. En quête d’une alternance dès septembre 2024, je mets mes
-        compétences en développement web au service de projets concrets et
-        ambitieux."
-      </h2>
-      <p>
-        Je m’appelle Ryad, j’ai 23 ans et je suis actuellement en première année
-        de formation en développement web à la Web Academy by Epitech. Passionné
-        par les nouvelles technologies, je me consacre à l’apprentissage des
-        outils et des langages qui façonnent le web d’aujourd’hui et de demain.
-        Au-delà de mes compétences techniques en développement, je suis une
-        personne motivée, toujours à l’écoute et prête à relever des défis en
-        équipe. Mon parcours m’a appris l’importance de la collaboration et de
-        la persévérance, des qualités que je cultive également dans ma pratique
-        de la boxe, un sport qui m’aide à rester discipliné et concentré. Je
-        vous invite à explorer mes projets pour découvrir mon univers et mon
-        approche du développement web. N’hésitez pas à me contacter pour
-        échanger ou collaborer sur de nouveaux défis !
-      </p>
+    <div id="apropos" style={{ padding: '4rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
+      <MaskedText>
+        <h2 style={{ fontSize: '2rem', lineHeight: '1.4', marginBottom: '2rem' }}>
+          Prêt à m'investir dans vos projets avec l'ISCOD.
+        </h2>
+      </MaskedText>
+      
+      <MaskedText>
+        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'inherit', opacity: 0.9 }}>
+          Je suis Ryad Lemmou, étudiant en développement web à l'ISCOD. Je suis actuellement
+          à la recherche d'une alternance pour mettre en pratique mes compétences et contribuer 
+          à la réussite de vos projets. J'ai hâte de m'intégrer à une équipe dynamique pour 
+          concevoir des expériences web fiables, utiles et modernes.
+        </p>
+      </MaskedText>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginTop: '2rem' }}>
+        <div style={{ border: '1px solid rgba(212,163,115,0.35)', borderRadius: '12px', padding: '1rem' }}>
+          <p style={{ margin: 0, fontWeight: 700, color: '#d4a373' }}>Objectif</p>
+          <p style={{ marginBottom: 0 }}>Trouver une alternance stimulante au sein d'une équipe web.</p>
+        </div>
+        <div style={{ border: '1px solid rgba(212,163,115,0.35)', borderRadius: '12px', padding: '1rem' }}>
+          <p style={{ margin: 0, fontWeight: 700, color: '#d4a373' }}>Formation</p>
+          <p style={{ marginBottom: 0 }}>École ISCOD, axée sur les compétences pratiques en développement web.</p>
+        </div>
+        <div style={{ border: '1px solid rgba(212,163,115,0.35)', borderRadius: '12px', padding: '1rem' }}>
+          <p style={{ margin: 0, fontWeight: 700, color: '#d4a373' }}>Engagement</p>
+          <p style={{ marginBottom: 0 }}>Motivation, esprit d'équipe et volonté d'apprendre au quotidien.</p>
+        </div>
+      </div>
     </div>
   );
 }

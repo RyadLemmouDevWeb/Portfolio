@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  padding: 2rem;
+  min-height: auto;
+  padding: 0.5rem 2rem 1rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -19,11 +19,17 @@
   max-width: 600px;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  
+  box-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 20px 50px rgba(0, 0, 0, 0.15),
+    0 30px 70px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 
   &::before {
     content: '';
@@ -33,6 +39,98 @@
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, $primary-color, transparent);
+    z-index: 1;
+  }
+
+  .corner-accent {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+    z-index: 0;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(135deg, rgba($primary-color, 0.3), transparent);
+      border-radius: 50%;
+      filter: blur(15px);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    &::before {
+      width: 60px;
+      height: 60px;
+    }
+
+    &::after {
+      width: 40px;
+      height: 40px;
+      animation-delay: 0.5s;
+    }
+  }
+
+  .corner-top-left {
+    top: -30px;
+    left: -30px;
+    
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    
+    &::after {
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  .corner-top-right {
+    top: -30px;
+    right: -30px;
+    
+    &::before {
+      top: 0;
+      right: 0;
+    }
+    
+    &::after {
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .corner-bottom-left {
+    bottom: -30px;
+    left: -30px;
+    
+    &::before {
+      bottom: 0;
+      left: 0;
+    }
+    
+    &::after {
+      bottom: 10px;
+      left: 10px;
+      animation-delay: 1s;
+    }
+  }
+
+  .corner-bottom-right {
+    bottom: -30px;
+    right: -30px;
+    
+    &::before {
+      bottom: 0;
+      right: 0;
+    }
+    
+    &::after {
+      bottom: 10px;
+      right: 10px;
+      animation-delay: 1.5s;
+    }
   }
 
   .form-header {
@@ -213,10 +311,81 @@
   100% { transform: rotate(360deg); }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+body:not(.dark-mode) {
+  .modern-contact-form {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9));
+    border-color: rgba(0, 0, 0, 0.1);
+
+    .form-header {
+      h3 {
+        color: $light-text;
+      }
+
+      p {
+        color: rgba($light-text, 0.8);
+      }
+    }
+
+    .form-input,
+    .form-textarea {
+      background: rgba(0, 0, 0, 0.02);
+      color: $light-text;
+      border-color: rgba(0, 0, 0, 0.15);
+
+      &::placeholder {
+        color: rgba($light-text, 0.5);
+      }
+
+      &:focus {
+        background: rgba(0, 0, 0, 0.03);
+        
+        &::placeholder {
+          color: rgba($light-text, 0.4);
+        }
+      }
+
+      &:hover {
+        border-color: rgba($primary-color, 0.5);
+        background: rgba(0, 0, 0, 0.025);
+      }
+    }
+
+    .input-icon {
+      color: $primary-color;
+    }
+  }
+}
+
 body.dark-mode {
   .modern-contact-form {
-    background: linear-gradient(145deg, rgba(45, 55, 72, 0.9), rgba(26, 32, 44, 0.8));
-    border-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(145deg, rgba(45, 55, 72, 0.95), rgba(26, 32, 44, 0.9));
+    border-color: rgba(255, 255, 255, 0.15);
+    
+    box-shadow: 
+      0 5px 15px rgba(0, 0, 0, 0.3),
+      0 15px 40px rgba(0, 0, 0, 0.4),
+      0 25px 60px rgba(0, 0, 0, 0.5),
+      0 35px 80px rgba(0, 0, 0, 0.6),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    .corner-accent {
+      &::before,
+      &::after {
+        background: linear-gradient(135deg, rgba($primary-color, 0.5), rgba($primary-color, 0.1));
+        filter: blur(20px);
+      }
+    }
 
     .form-header {
       h3 {
