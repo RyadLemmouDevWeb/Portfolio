@@ -33,25 +33,16 @@ export default function Footer() {
           &copy; 2026 Lemmou Ryad. Tous droits réservés.
         </p>
 
-        <div style={{ position: 'absolute', right: '3rem', bottom: '2rem' }}>
-            <Magnetic>
-                <motion.a 
-                  href="#accueil"
-                    style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center',
-                        width: '50px', 
-                        height: '50px', 
-                        borderRadius: '50%', 
-                        background: '#d4a373',
-                        color: 'white',
-                        cursor: 'pointer'
-                    }}
-                >
-                    <AiOutlineArrowUp size={24} />
-                </motion.a>
-            </Magnetic>
+        <div className="scroll-top-wrapper">
+          <Magnetic>
+            <motion.a
+              href="#accueil"
+              className="scroll-top-btn"
+              aria-label="Remonter en haut"
+            >
+              <AiOutlineArrowUp size={24} />
+            </motion.a>
+          </Magnetic>
         </div>
       </div>
     </footer>

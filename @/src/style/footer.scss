@@ -55,10 +55,36 @@ footer {
     margin-top: 10px;
   }
 
-  #scrollToTop {
-    right: 10px;
-    bottom: 10px;
-    font-size: 1rem;
-    padding: 8px;
+  .scroll-top-wrapper {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2rem;
+  }
+
+  .scroll-top-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: $primary-color;
+    color: $light-color;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  }
+
+  .scroll-top-wrapper {
+    right: 0.6rem;
+    bottom: 0.8rem;
+  }
+
+  .scroll-top-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  p:last-of-type {
+    padding: 0 1rem;
   }
 }

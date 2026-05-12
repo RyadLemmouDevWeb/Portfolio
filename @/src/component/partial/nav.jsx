@@ -5,6 +5,7 @@ import Magnetic from '../animations/Magnetic';
 export default function Nav() {
   const [hidden, setHidden] = useState(false);
   const [logoSrc, setLogoSrc] = useState('/assets/logo/Logo_Noir.png');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -47,21 +48,63 @@ export default function Nav() {
   };
 
   return (
-    <motion.header
-      variants={navVariants}
-      initial="visible"
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="island-navbar"
-    >
-      <div className="nav-content">
-        <Magnetic>
-          <motion.a href="#accueil" className="nav-logo">
-            <img src={logoSrc} alt="Logo Ryad" />
-          </motion.a>
-        </Magnetic>
+    <>
+      <motion.header
+        variants={navVariants}
+        initial="visible"
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="island-navbar"
+      >
+        <div className="nav-content">
+          <Magnetic>
+            <motion.a href="#accueil" className="nav-logo">
+              <img src={logoSrc} alt="Logo Ryad" />
+            </motion.a>
+          </Magnetic>
 
-        <nav className="nav-links">
+          <nav className="nav-links">
+            {[
+              { label: 'Accueil', href: '#accueil' },
+              { label: 'À propos', href: '#apropos' },
+              { label: 'Compétences', href: '#competences' },
+              { label: 'Réalisations', href: '#projets' },
+              { label: 'Contact', href: '#contact' },
+            ].map((item) => (
+              <Magnetic key={item.label}>
+                <a href={item.href} className="nav-link">
+                  {item.label}
+                </a>
+              </Magnetic>
+            ))}
+          </nav>
+
+          <Magnetic>
+            <div className="toggle-container" id="darkModeToggle">
+              <div className="toggle-circle"></div>
+            </div>
+          </Magnetic>
+
+          <motion.button
+            className="hamburger-menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className={mobileMenuOpen ? 'open' : ''}></span>
+            <span className={mobileMenuOpen ? 'open' : ''}></span>
+            <span className={mobileMenuOpen ? 'open' : ''}></span>
+          </motion.button>
+        </div>
+      </motion.header>
+
+      <motion.div
+        className="mobile-menu"
+        initial={{ opacity: 0, y: -20, x: "-50%" }}
+        animate={mobileMenuOpen ? { opacity: 1, y: 0, x: "-50%" } : { opacity: 0, y: -20, x: "-50%" }}
+        transition={{ duration: 0.2 }}
+        style={{ pointerEvents: mobileMenuOpen ? 'auto' : 'none', position: 'fixed', left: '50%' }}
+      >
+        <nav className="mobile-nav-links">
           {[
             { label: 'Accueil', href: '#accueil' },
             { label: 'À propos', href: '#apropos' },
@@ -69,20 +112,17 @@ export default function Nav() {
             { label: 'Réalisations', href: '#projets' },
             { label: 'Contact', href: '#contact' },
           ].map((item) => (
-            <Magnetic key={item.label}>
-              <a href={item.href} className="nav-link">
-                {item.label}
-              </a>
-            </Magnetic>
+            <a
+              key={item.label}
+              href={item.href}
+              className="mobile-nav-link"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+            </a>
           ))}
         </nav>
-
-        <Magnetic>
-          <div className="toggle-container" id="darkModeToggle">
-            <div className="toggle-circle"></div>
-          </div>
-        </Magnetic>
-      </div>
-    </motion.header>
+      </motion.div>
+    </>
   );
 }

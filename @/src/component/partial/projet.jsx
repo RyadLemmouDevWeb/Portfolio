@@ -39,9 +39,12 @@ export default function Projet() {
         '/assets/screenshots_projects/mangalaxy/Mangalaxy_Accueil.png',
         '/assets/screenshots_projects/mangalaxy/Mangalaxy_Boutique.png',
         '/assets/screenshots_projects/mangalaxy/Mangalaxy_Produits.png',
+        '/assets/screenshots_projects/mangalaxy/Mangalaxy_Compte.png',
+        '/assets/screenshots_projects/mangalaxy/Mangalaxy_Admin.png',
         '/assets/screenshots_projects/mangalaxy/Mangalaxy_Panier.png',
         '/assets/screenshots_projects/mangalaxy/Mangalaxy_Paiement.png',
-        '/assets/screenshots_projects/mangalaxy/Mangalaxy_Compte.png',
+        '/assets/screenshots_projects/mangalaxy/Mangalaxy_Livraison.png',
+        '/assets/screenshots_projects/mangalaxy/Mangalaxy_Commande.png',
       ]
     },
     {
@@ -62,8 +65,29 @@ export default function Projet() {
         '/assets/screenshots_projects/manga_tracker/Manga_Tracker_Stats.png',
         '/assets/screenshots_projects/manga_tracker/Manga_Tracker_Terminé.png',
       ]
-    }
-    ,
+    },
+    {
+      title: '1Twitter2Plus',
+      type: 'Réseau Social Fullstack',
+      description: "Plateforme de réseau social complète inspirée de Twitter, développée en PHP natif et MySQL avec une architecture MVC modulaire.",
+      highlights: [
+        "Flux d'actualité dynamique avec hashtags et tendances en temps réel",
+        "Messagerie privée, notifications d'activité et gestion des blocages",
+        "Sécurité avancée : Protection CSRF, hachage BCRYPT et Rate Limiting",
+      ],
+      githubUrl: 'https://github.com/RyadLemmouDevWeb/1Twitter2Plus',
+      ctaLabel: 'Voir le projet',
+      images: [
+        '/assets/screenshots_projects/twitter/Twitter_login.png',
+        '/assets/screenshots_projects/twitter/Twitter_Inscription.png',
+        '/assets/screenshots_projects/twitter/Twitter_Feed.png',
+        '/assets/screenshots_projects/twitter/Twitter_Profil.png',
+        '/assets/screenshots_projects/twitter/Twitter_Messages.png',
+        '/assets/screenshots_projects/twitter/Twitter_Notif.png',
+        '/assets/screenshots_projects/twitter/Twitter_Search.png',
+        '/assets/screenshots_projects/twitter/Twitter_Signets.png',
+      ]
+    },
     {
       title: 'Spotify Like',
       type: 'Application fullstack',
@@ -76,12 +100,16 @@ export default function Projet() {
       githubUrl: 'https://github.com/RyadLemmouDevWeb/Spotify_Like',
       ctaLabel: 'Voir le projet',
       images: [
+        '/assets/screenshots_projects/spotify/Spotify_Connexion.png',
+        '/assets/screenshots_projects/spotify/Spotify_Inscription.png',
         '/assets/screenshots_projects/spotify/Spotify_Accueil.png',
         '/assets/screenshots_projects/spotify/Spotify_Albums.png',
         '/assets/screenshots_projects/spotify/Spotify_Artistes.png',
         '/assets/screenshots_projects/spotify/Spotify_Genres.png',
         '/assets/screenshots_projects/spotify/Spotify_Recherche.png',
+        '/assets/screenshots_projects/spotify/Spotify_Compte.png',
         '/assets/screenshots_projects/spotify/Spotify_Local_Albums.png',
+        '/assets/screenshots_projects/spotify/Spotify_Local_Albums_2.png',
       ]
     },
     {
