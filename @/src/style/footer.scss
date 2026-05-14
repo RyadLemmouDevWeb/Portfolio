@@ -27,22 +27,28 @@ footer {
   color: $dark-color;
 }
 
-#scrollToTop {
-  background: $primary-color;
-  border: none;
-  color: $light-color;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
+.scroll-top-wrapper {
   position: absolute;
   right: 20px;
   bottom: 20px;
-  transition: background 0.3s;
 }
 
-#scrollToTop:hover {
-  background: lighten-color($primary-color, 10%);
+.scroll-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $primary-color;
+  color: $light-color;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.scroll-top-btn:hover {
+  background: darken-color($primary-color, 10%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 @media (max-width: 768px) {
@@ -53,25 +59,6 @@ footer {
 
   .social-icons {
     margin-top: 10px;
-  }
-
-  .scroll-top-wrapper {
-    position: absolute;
-    right: 2.5rem;
-    bottom: 2rem;
-  }
-
-  .scroll-top-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: $primary-color;
-    color: $light-color;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
   }
 
   .scroll-top-wrapper {

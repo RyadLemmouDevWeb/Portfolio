@@ -41,7 +41,12 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    emailjs.sendForm('service_snwdur8', 'template_z6azfxd', form.current, { publicKey: 'pjah6I72S5ifk95J5' })
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+      form.current, 
+      { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+    )
       .then(() => {
           setIsSubmitted(true);
           setFormData({

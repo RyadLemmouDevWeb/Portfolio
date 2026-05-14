@@ -27,6 +27,10 @@ $button-hover: rgba(184, 134, 91, 1);
   @return color.adjust($color, $lightness: $amount);
 }
 
+@function darken-color($color, $amount) {
+  @return color.adjust($color, $lightness: -$amount);
+}
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
